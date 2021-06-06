@@ -1,7 +1,12 @@
 @extends('admin')
 
 @section('content')
-	<div class="box-body" style="width: 1200px;">
+	<a href="{{ route('proveedor.new') }}" class="btn btn-primary">
+        <i class="fa fa-user"></i> 
+    	Crear Proveedor
+    </a>
+    <br><br>
+	<div class="box-body" style="width: 1200px; padding-right: 20px;">
 			<table id="example1" class="table table-bordered table-striped">
 				<thead>
 					<tr>
