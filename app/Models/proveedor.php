@@ -10,7 +10,8 @@ class proveedor extends Model
     use HasFactory;
 
     protected $table="proveedores";
-    protected $primarykey="idProveedor";
+    protected $primaryKey="idProveedor";
     public $incrementing=true;
     public $timestamps=false;
+
 }

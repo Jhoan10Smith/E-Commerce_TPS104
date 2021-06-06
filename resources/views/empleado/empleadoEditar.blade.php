@@ -2,7 +2,7 @@
 
 @section('content')
 	<?php
-	echo "<pre>".$empleado."</pre>";
+		echo "<pre>".$empleado."</pre>";
 	?>
 	<div style="width: 70%;">
 		<form action="{{ route('empleado.update',$empleado) }}" method="POST">
