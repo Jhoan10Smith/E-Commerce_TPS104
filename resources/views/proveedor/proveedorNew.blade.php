@@ -16,13 +16,13 @@
 			<input type="text" 
 					name="nombre"
 					class="form-control"
-					id="apellido">
+					id="nombre">
 			<br>
 			<label>Codigo de la Ciudad</label>
 			<input type="text" 
 					name="codigoCiudad"
 					class="form-control"
-					id="nombre">
+					id="codigoCiudad">
 			<br>
 			<label>Direccion</label>
 			<input type="text" 

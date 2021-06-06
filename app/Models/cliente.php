@@ -10,7 +10,7 @@ class cliente extends Model
     use HasFactory;
 
     protected $table="cliente";
-    protected $primarykey="codigoCliente";
+    protected $primaryKey="codigoCliente";
     public $incrementing=true;
     public $timestamps=false;
 
