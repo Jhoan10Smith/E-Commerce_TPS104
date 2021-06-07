@@ -3,7 +3,7 @@
 @section('aside')
 	<div class="left-sidebar">
 		<h2>ADMIN</h2>
-		<div class="panel-group category-products" id="accordian"><!--category-productsr-->
+		<div class="panel-group category-products" id="accordian"><!--category-products-->
 
 			<div class="panel panel-default">
 				<div class="panel-heading">
@@ -20,7 +20,7 @@
 				<div class="panel-heading">
 					<h2 class="panel-title">
 						<a href="{{ route('empleado.index') }}">
-							<i class="fa fa-user"></i>
+							<i class="fas fa-user"></i>
 							Empleado
 						</a>
 					</h2>
@@ -31,8 +31,19 @@
 				<div class="panel-heading">
 					<h2 class="panel-title">
 						<a href="{{ route('proveedor.index') }}">
-							<i class="fa fa-users"></i>
+							<i class="fas fa-users"></i>
 							Proveedores
+						</a>
+					</h2>
+				</div>	
+			</div>
+
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h2 class="panel-title">
+						<a href="{{ route('venta.index') }}">
+							<i class="fas fa-cart-arrow-down"></i>
+							Detalle Venta
 						</a>
 					</h2>
 				</div>	
