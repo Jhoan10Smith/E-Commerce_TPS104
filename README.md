@@ -8,6 +8,49 @@
 </p>
 
 ## About Laravel
+<p align="center">
+E-Commerce
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+Servicio nacional de aprendizaje SENA.
+Centro de electricidad y automatización industrial. 
+Técnico en programación de software.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+TPS 1-104.
+2021.
+Copyright © 2021 por TPS 1-104. Todos los derechos reservados.
+</p>
+
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
