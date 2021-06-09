@@ -26,6 +26,10 @@ Route::get('/admin', function(){
 	return view('admin');
 });
 
+Route::get('/documentacion', function(){
+	return view('documentacion');
+})->name('document');
+
 require_once('empleado.php');
 require_once('cliente.php');
 require_once('proveedor.php');
