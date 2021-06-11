@@ -35,3 +35,4 @@ require_once('cliente.php');
 require_once('proveedor.php');
 require_once('detalleventa.php');
 require_once('factura.php');
+require_once('articulo.php');
