@@ -13,7 +13,7 @@
 							Cliente
 						</a>
 					</h2>
-				</div>	
+				</div>
 			</div>
 
 			<div class="panel panel-default">
@@ -35,7 +35,18 @@
 							Proveedores
 						</a>
 					</h2>
-				</div>	
+				</div>
+			</div>
+
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h2 class="panel-title">
+						<a href="{{ route('proveedor.index') }}">
+							<i class="fa fa-users"></i>
+							articulo
+						</a>
+					</h2>
+				</div>
 			</div>
 
 		</div><!--/category-products-->
