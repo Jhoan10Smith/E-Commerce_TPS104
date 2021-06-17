@@ -5,13 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class cliente extends Model
+class factura extends Model
 {
     use HasFactory;
 
-    protected $table="cliente";
-    protected $primaryKey="codigoCliente";
+    protected $table="factura";
+    protected $primaryKey="codigoDocumento";
     public $incrementing=true;
     public $timestamps=false;
-
 }

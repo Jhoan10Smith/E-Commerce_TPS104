@@ -8,9 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class articulo extends Model
 {
     use HasFactory;
-    protected $table = 'articulo';
-    protected $primaryKey = 'codigoArticulo';
-    public $timestamps=false;
+
+    protected $table="articulo";
+    protected $primaryKey="codigoArticulo";
     public $incrementing=true;
-    
+    public $timestamps=false;
 }
+#UN COMENTARIO X PARA PROBAR EL PUSHÑ

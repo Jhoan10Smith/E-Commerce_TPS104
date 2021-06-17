@@ -1,9 +1,9 @@
 @extends('admin')
 
 @section('content')
-	<?php
+	{{-- <?php
 		echo "<pre>".$empleado."</pre>";
-	?>
+	?> --}}
 	<div style="width: 70%;">
 		<form action="{{ route('empleado.update',$empleado) }}" method="POST">
 			@csrf

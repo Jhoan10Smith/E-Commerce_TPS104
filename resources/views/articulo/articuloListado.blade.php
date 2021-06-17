@@ -1,54 +1,46 @@
 @extends('admin')
-@section('content')
-<div class="box-body" style="width: 1500px">
-    <table id="example1" class="table table-bordered table-striped">
-        <thead>
-            <tr>
-                <th>Acciones</th>
-                <th>Codigo</th>
-                <th>Num.Documento</th>
-                <th>Nombre</th>
-                <th>Apellido</th>
-                <th>Genero</th>
-                <th>Fecha de nacimiento</th>
-                <th>Direccion</th>
-                <th>Telefono</th>
-                <th>Email</th>
-                <th>Id barrio</th>
-                <th>Codigo ciudad</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach($articulo as $datos)
-                <tr>
-                    <td>
-                        <div style="padding-left: 15px; display: inline-block;">
-                            <a href="">
-                                <img src="https://image.flaticon.com/icons/png/512/126/126794.png" width="25px">
-                            </a>
-                        </div>
-                        <div style="text-align: right; display: inline-block; width: 45%">
-                            <a href="">
-                                <img src="https://icons555.com/images/icons-red/image_icon_delete_pic_512x512.png" width="25px">
-                            </a>
-                        </div>
-                    </td>
-                    <td>{{ $datos->codigoCliente }}</td>
-                    <td>{{ $datos->numeroDocumento }}</td>
-                    <td>{{ $datos->nombre }}</td>
-                    <td>{{ $datos->apellido }}</td>
-                    <td>{{ $datos->genero }}</td>
-                    <td>{{ $datos->fechaNacimiento }}</td>
-                    <td>{{ $datos->direccion }}</td>
-                    <td>{{ $datos->telefono }}</td>
-                    <td>{{ $datos->email }}</td>
-                    <td>{{ $datos->idBarrio }}</td>
-                    <td>{{ $datos->codigoCiudad }}</td>
-                </tr>
-            @endforeach
-        </tbody>
-    </table>
-</div>
-</div>
 
-@endsection()
+@section('content')
+	<a href="{{ route('articulo.new') }}" class="btn btn-primary">
+        <i class="fa fa-user"></i>
+    	Crear Articulo
+    </a>
+    <br><br>
+	<div class="box-body">
+		<table id="example1" class="table table-bordered table-striped">
+			<thead>
+				<tr>
+					<th>Acciones</th>
+					<th>codidoArticulo</th>
+					<th>descripcion</th>
+					<th>idProveedor</th>
+					<th>iva</th>
+					<th>numeroDocumento</th>
+				</tr>
+			</thead>
+			<tbody>
+				@foreach($articulo as $datos)
+					<tr>
+						<td>
+							<div style="padding-left: 15px; display: inline-block;">
+								<a href="{{ route('articulo.edit',$datos) }}">
+									<img src="https://image.flaticon.com/icons/png/512/126/126794.png" width="25px">
+								</a>
+							</div>
+							<div style="text-align: right; display: inline-block; width: 45%">
+								<a href="{{ route('articulo.delete',$datos) }}">
+									<img src="https://icons555.com/images/icons-red/image_icon_delete_pic_512x512.png" width="25px">
+								</a>
+							</div>
+						</td>
+						<td>{{ $datos->codigoArticulo }}</td>
+						<td>{{ $datos->descripcion }}</td>
+						<td>{{ $datos->idProveedor }}</td>
+						<td>{{ $datos->iva }}</td>
+						<td>{{ $datos->numeroDocumento }}</td>
+					</tr>
+				@endforeach
+			</tbody>
+		</table>
+	</div>
+@endsection
