@@ -59,6 +59,39 @@
 					</h2>
 				</div>	
 			</div>
+			
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h2 class="panel-title">
+						<a href="{{ route('articulo.index') }}">
+							<i class="fas fa-box-open"></i>
+							Articulo
+						</a>
+					</h2>
+				</div>	
+			</div>
+			
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h2 class="panel-title">
+						<a href="{{ route('barrio.index') }}">
+							<i class="fas fa-house-user"></i>
+							Barrio
+						</a>
+					</h2>
+				</div>	
+			</div>
+			
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h2 class="panel-title">
+						<a href="{{ route('ciudad.index') }}">
+							<i class="fas fa-city"></i>
+							Ciudad
+						</a>
+					</h2>
+				</div>	
+			</div>
 
 		</div><!--/category-products-->
 	</div>
