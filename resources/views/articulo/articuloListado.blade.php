@@ -2,6 +2,7 @@
 
 @section('content')
 	<a href="{{ route('articulo.new') }}" class="btn btn-primary">
+<<<<<<< HEAD
         <i class="fa fa-user"></i> 
     	Crear Articulo
     </a>
@@ -16,6 +17,22 @@
 					<th>Id Proveedor</th>
 					<th>Iva</th>
 					
+=======
+        <i class="fa fa-user"></i>
+    	Crear Articulo
+    </a>
+    <br><br>
+	<div class="box-body">
+		<table id="example1" class="table table-bordered table-striped">
+			<thead>
+				<tr>
+					<th>Acciones</th>
+					<th>codidoArticulo</th>
+					<th>descripcion</th>
+					<th>idProveedor</th>
+					<th>iva</th>
+					<th>numeroDocumento</th>
+>>>>>>> 5fbc6325a081f587c5e31a062327478ebb5ec416
 				</tr>
 			</thead>
 			<tbody>
@@ -37,10 +54,18 @@
 						<td>{{ $datos->descripcion }}</td>
 						<td>{{ $datos->idProveedor }}</td>
 						<td>{{ $datos->iva }}</td>
+<<<<<<< HEAD
 						
+=======
+						<td>{{ $datos->numeroDocumento }}</td>
+>>>>>>> 5fbc6325a081f587c5e31a062327478ebb5ec416
 					</tr>
 				@endforeach
 			</tbody>
 		</table>
 	</div>
+<<<<<<< HEAD
 @endsection
+=======
+@endsection
+>>>>>>> 5fbc6325a081f587c5e31a062327478ebb5ec416

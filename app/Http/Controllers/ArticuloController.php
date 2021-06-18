@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Models\articulo;
 
-class articuloController extends Controller
+class ArticuloController extends Controller
 {
     public function index()
     {

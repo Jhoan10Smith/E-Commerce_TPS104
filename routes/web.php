@@ -36,6 +36,9 @@ require_once('proveedor.php');
 require_once('detalleventa.php');
 require_once('factura.php');
 require_once('articulo.php');
+<<<<<<< HEAD
 require_once('barrio.php');
 require_once('ciudad.php');
 
+=======
+>>>>>>> 5fbc6325a081f587c5e31a062327478ebb5ec416
