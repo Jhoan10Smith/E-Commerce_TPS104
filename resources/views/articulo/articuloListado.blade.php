@@ -32,7 +32,12 @@
 					<th>idProveedor</th>
 					<th>iva</th>
 					<th>numeroDocumento</th>
+<<<<<<< HEAD
 >>>>>>> 5fbc6325a081f587c5e31a062327478ebb5ec416
+=======
+					<th>un th para probar el push</th>
+					<th>otro th para probar el push</th>
+>>>>>>> f93ccae47b67354a5aa68fa5d75b290b616157d0
 				</tr>
 			</thead>
 			<tbody>
