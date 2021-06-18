@@ -16,6 +16,8 @@
 					<th>idProveedor</th>
 					<th>iva</th>
 					<th>numeroDocumento</th>
+					<th>un th para probar el push</th>
+					<th>otro th para probar el push</th>
 				</tr>
 			</thead>
 			<tbody>
