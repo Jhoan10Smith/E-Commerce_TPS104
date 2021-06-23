@@ -1,5 +1,6 @@
 <?php
 
+
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -11,7 +12,7 @@ class empleado extends Model
 
     protected $table="empleado";
     public $primarykey="id";
-    public $incrementing = false;
+    public $incrementing = true;
     public $timestamps = false;
     
 }

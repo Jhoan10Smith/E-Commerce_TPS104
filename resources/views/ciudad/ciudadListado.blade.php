@@ -6,7 +6,7 @@
     	Crear Ciudad
     </a>
     <br><br>
-	<div class="box-body" style="width: 1500px; padding-right: 20px;">
+	<div class="box-body" style="padding-right: 20px;">
 		<table id="example1" class="table table-bordered table-striped">
 			<thead>
 				<tr>

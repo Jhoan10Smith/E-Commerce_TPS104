@@ -41,17 +41,6 @@
 			<div class="panel panel-default">
 				<div class="panel-heading">
 					<h2 class="panel-title">
-						<a href="{{ route('proveedor.index') }}">
-							<i class="fa fa-users"></i>
-							articulo
-						</a>
-					</h2>
-				</div>
-			</div>
-
-			<div class="panel panel-default">
-				<div class="panel-heading">
-					<h2 class="panel-title">
 						<a href="{{ route('venta.index') }}">
 							<i class="fas fa-cart-arrow-down"></i>
 							Detalle Venta
@@ -99,17 +88,6 @@
 						<a href="{{ route('ciudad.index') }}">
 							<i class="fas fa-city"></i>
 							Ciudad
-						</a>
-					</h2>
-				</div>	
-			</div>
-
-			<div class="panel panel-default">
-				<div class="panel-heading">
-					<h2 class="panel-title">
-						<a href="{{ route('articulo.index') }}">
-							<i class="fas fa-receipt"></i>
-							Articulo
 						</a>
 					</h2>
 				</div>	
