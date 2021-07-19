@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-07-19T19:45:01.050Z" agent="5.0 (Windows)" etag="hBjc-7Arh3FZMOgwYQkK" version="14.9.0" type="github">
+<mxfile host="app.diagrams.net" modified="2021-07-19T20:23:09.217Z" agent="5.0 (Windows)" etag="ky70gKlI12geSbynuDAC" version="14.9.0" type="github">
   <diagram id="kgpKYQtTHZ0yAKxKKP6v" name="Page-1">
     <mxGraphModel dx="716" dy="389" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -91,7 +91,7 @@
         <mxCell id="8-uikaEKsJhs2yyKb9B0-10" value="" style="points=[];perimeter=orthogonalPerimeter;rounded=0;shadow=0;strokeWidth=1;" vertex="1" parent="1">
           <mxGeometry x="353" y="160" width="10" height="120" as="geometry" />
         </mxCell>
-        <mxCell id="8-uikaEKsJhs2yyKb9B0-11" value="datos" style="verticalAlign=bottom;endArrow=block;shadow=0;strokeWidth=1;entryX=0.01;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" target="8-uikaEKsJhs2yyKb9B0-12">
+        <mxCell id="8-uikaEKsJhs2yyKb9B0-11" value="envio de datos" style="verticalAlign=bottom;endArrow=block;shadow=0;strokeWidth=1;entryX=0.01;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" target="8-uikaEKsJhs2yyKb9B0-12">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="363.0000000000001" y="160" as="sourcePoint" />
             <mxPoint x="510" y="160" as="targetPoint" />
@@ -156,11 +156,36 @@
         <mxCell id="8-uikaEKsJhs2yyKb9B0-24" value="" style="points=[];perimeter=orthogonalPerimeter;rounded=0;shadow=0;strokeWidth=1;" vertex="1" parent="1">
           <mxGeometry x="170" y="480" width="10" height="120" as="geometry" />
         </mxCell>
-        <mxCell id="8-uikaEKsJhs2yyKb9B0-25" value="checkout (pagina de pago)" style="verticalAlign=bottom;endArrow=block;entryX=0.055;entryY=0;shadow=0;strokeWidth=1;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1">
+        <mxCell id="8-uikaEKsJhs2yyKb9B0-25" value="checkout (datos de pago)" style="verticalAlign=bottom;endArrow=block;entryX=0.055;entryY=0.005;shadow=0;strokeWidth=1;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" target="8-uikaEKsJhs2yyKb9B0-28">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="180.0000000000001" y="480" as="sourcePoint" />
             <mxPoint x="345.54999999999995" y="480" as="targetPoint" />
           </mxGeometry>
+        </mxCell>
+        <mxCell id="8-uikaEKsJhs2yyKb9B0-26" value="listar bancos con api" style="html=1;verticalAlign=bottom;startArrow=oval;startFill=1;endArrow=block;startSize=8;" edge="1" parent="1">
+          <mxGeometry x="0.0435" width="60" relative="1" as="geometry">
+            <mxPoint x="50" y="480" as="sourcePoint" />
+            <mxPoint x="165" y="480" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="110" y="480" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8-uikaEKsJhs2yyKb9B0-27" value="envio de datos a la bd" style="verticalAlign=bottom;endArrow=block;entryX=0.079;entryY=0;shadow=0;strokeWidth=1;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" target="8-uikaEKsJhs2yyKb9B0-30">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="363.0000000000001" y="480" as="sourcePoint" />
+            <mxPoint x="528.55" y="480" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8-uikaEKsJhs2yyKb9B0-28" value="" style="points=[];perimeter=orthogonalPerimeter;rounded=0;shadow=0;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="340" y="480" width="10" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="8-uikaEKsJhs2yyKb9B0-29" value="" style="points=[];perimeter=orthogonalPerimeter;rounded=0;shadow=0;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="353" y="480" width="10" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="8-uikaEKsJhs2yyKb9B0-30" value="" style="points=[];perimeter=orthogonalPerimeter;rounded=0;shadow=0;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="517" y="480" width="10" height="120" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
