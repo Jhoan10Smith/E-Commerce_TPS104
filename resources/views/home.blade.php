@@ -28,7 +28,7 @@
 						<div class="single-products">
 								<div class="productinfo text-center">
 									<div style="width: 200px; height: 178px; margin: auto">
-										@if ($da tos->imagen != NULL)
+										@if ($datos->imagen != NULL)
 											<img src="{{ asset('img/galeria/'.$datos->imagen) }}" style="width: 100%; height:100%; object-fit: contain">
 										@else
 											<img src="{{ asset('img/galeria/noImage.jpg') }}" style="width: 100%; height:100%; object-fit: contain">
