@@ -10,7 +10,7 @@ class factura extends Model
     use HasFactory;
 
     protected $table="factura";
-    protected $primaryKey="codigoDocumento";
+    protected $primaryKey="idFactura";
     public $incrementing=true;
     public $timestamps=false;
 }

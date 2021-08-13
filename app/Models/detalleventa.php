@@ -10,7 +10,7 @@ class detalleventa extends Model
     use HasFactory;
 
     protected $table="detalleventa";
-    protected $primaryKey="numeroDocumento";
-    public $incrementing=false;
+    protected $primaryKey="idDetalle";
+    public $incrementing=true;
     public $timestamps=false;
 }

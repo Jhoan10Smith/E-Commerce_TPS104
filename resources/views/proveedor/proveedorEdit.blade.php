@@ -6,16 +6,44 @@
 			@csrf
           	@method('PUT')
 
-			<label>ID</label>
+			<!--label>Id Proveedor</label>
 			<input type="text" 
-					name="id" 
+					name="idProveedor" 
 					value="{{ $proveedor->idProveedor }}"
 					class="form-control"
-					id="id"
+					id="idProveedor"
 					readonly="true">
+			<br-->
+			<label>Id Tipos</label>
+			<select class="form-control" name= "idTipos">
+				@foreach ($tipos as $item)
+					<?php if( $item->idTipos == $proveedor->idTipos){ ?>
+						<option value="{{$item->idTipos}}" selected>{{$item->descripcion}}</option>
+					<?php }else { ?>
+						<option value="{{ $item->idTipos}}">{{$item->descripcion}}</option>
+					<?php } ?>	
+				@endforeach
+
+			</select>
 			<br>
-			<label>Numero de Identidad</label>
-			<input type="text"
+
+			<label>Codigo Ciudad</label>
+			<select class="form-control" name= "codigoCiudad">
+					@foreach ($ciudad as $item)
+					<?php if($item->codigoCiudad ==$proveedor->codigoCiudad){ ?>
+						<option value="{{$item->codigoCiudad}}" selected>{{$item->nombre}}</option>
+					<?php }else { ?>
+						<option value="{{ $item->codigoCiudad}}">{{$item->nombre}}</option>
+					<?php } ?>	
+				@endforeach
+
+
+			</select>
+
+			<br>
+			
+			<label>Numero de Identificación</label>
+			<input type="text" 
 					name="numeroIdentidad"
 					value="{{ $proveedor->numeroIdentidad }}"
 					class="form-control"
@@ -28,13 +56,7 @@
 					class="form-control"
 					id="nombre">
 			<br>
-			<label>Codigo de la Ciudad</label>
-			<input type="text" 
-					name="codigoCiudad"
-					value="{{ $proveedor->codigoCiudad }}"
-					class="form-control"
-					id="codigoCiudad">
-			<br>
+		
 			<label>Direccion</label>
 			<input type="text" 
 					name="direccion"

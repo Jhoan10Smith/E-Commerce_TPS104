@@ -5,8 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Models\factura;
+use App\Models\usuario;
 
-class FacturaController extends Controller
+
+class facturaController extends Controller
 {
     public function index()
     {
@@ -16,50 +18,11 @@ class FacturaController extends Controller
 
     public function edit(factura $factura)
     {
-    	return view('factura.facturaEdit',compact('factura'));
+    	
+        $usuario=usuario::all();
+        return view('factura.facturaEdit',compact('factura','usuario'));
     }
 
-    public function update(request $update, factura $factura)
-    {
-    	// return $update;
-    	$factura->numeroDocumento = $update->numeroDocumento;
-    	$factura->fecha = $update->fecha;
-    	$factura->hora = $update->hora;
-    	$factura->codigoCliente = $update->codigoCliente;
-    	$factura->idEmpleado = $update->idEmpleado;
-
-    	$factura->save();
-    	$factura=factura::all();
-    	return redirect()->route('factura.index',compact('factura'));
-    }
-
-    public function delete(factura $factura)
-    {
-    	$factura->delete();
-    	$factura=factura::all();
-
-    	return redirect()->route('factura.index',compact('factura'));
-    }
-
-    public function new()
-    {
-    	return view('factura.facturaNew');
-    }
-
-    public function save(request $new)
-    {
-    	$factura=new factura();
-
-    	$factura->numeroDocumento = $new->numeroDocumento;
-    	$factura->fecha = $new->fecha;
-    	$factura->hora = $new->hora;
-    	$factura->codigoCliente = $new->codigoCliente;
-    	$factura->idEmpleado = $new->idEmpleado;
-
-    	$factura->save();
-    	$factura=factura::all();
-
-    	return redirect()->route('factura.index',compact('factura'));
-    }
+   
 
 }

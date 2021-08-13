@@ -5,8 +5,11 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Models\proveedor;
+use App\Models\tipos;
+use App\Models\ciudad;
 
-class ProveedorController extends Controller
+
+class proveedorController extends Controller
 {
     public function index()
     {
@@ -21,38 +24,48 @@ class ProveedorController extends Controller
     	return redirect()->route('proveedor.index',compact('proveedor'));
     }
 
-    public function edit(proveedor $proveedor)
+    public function edit($id)
     {
-    	return view('proveedor.proveedorEdit', compact('proveedor'));
+    	$proveedor = proveedor::find($id);
+        $tipos = tipos::all();
+        $ciudad = ciudad::all();
+        return view('proveedor.proveedorEdit', compact('proveedor','tipos','ciudad'));
     }
 
-    public function update(request $update, proveedor $proveedor)
+    public function update(request $editInfo, proveedor $proveedor)
     {
-    	$proveedor->numeroIdentidad = $update->numeroIdentidad;
-    	$proveedor->nombre = $update->nombre;
-    	$proveedor->codigoCiudad = $update->codigoCiudad;
-    	$proveedor->direccion = $update->direccion;
-    	$proveedor->telefono = $update->telefono;
-    	$proveedor->email = $update->email;
+    	//$proveedor->idProveedor = $editInfo->idProveedor;
+        $proveedor->idTipos = $editInfo->idTipos;
+		$proveedor->codigoCiudad = $editInfo->codigoCiudad;
+		$proveedor->numeroIdentidad = $editInfo->numeroIdentidad;
+    	$proveedor->nombre = $editInfo->nombre;
+		$proveedor->direccion = $editInfo->direccion;
+    	$proveedor->telefono = $editInfo->telefono;
+    	$proveedor->email = $editInfo->email;
 
     	$proveedor->save();
     	$proveedor=proveedor::all();
+        
     	return redirect()->route('proveedor.index',compact('proveedor'));
     }
 
     public function new()
     {
-    	return view('proveedor.proveedorNew');
+    	$proveedor = proveedor::all();
+        $tipos = tipos::all();
+        $ciudad = ciudad::all();
+        return view('proveedor.proveedorNew',compact('proveedor','tipos','ciudad'));
     }
 
     public function save(request $create)
     {
     	$proveedor = new proveedor();
 
-    	$proveedor->numeroIdentidad = $create->numeroIdentidad;
+		$proveedor->idTipos = $create->idTipos;
+		$proveedor->codigoCiudad = $create->codigoCiudad;
+		$proveedor->numeroIdentidad = $create->numeroIdentidad;
     	$proveedor->nombre = $create->nombre;
-    	$proveedor->codigoCiudad = $create->codigoCiudad;
-    	$proveedor->direccion = $create->direccion;
+		$proveedor->direccion = $create->direccion;
     	$proveedor->telefono = $create->telefono;
     	$proveedor->email = $create->email;
 

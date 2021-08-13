@@ -2,24 +2,31 @@
 
 @section('content')
 	<a href="{{ route('articulo.new') }}" class="btn btn-primary">
+
         <i class="fa fa-user"></i> 
     	Crear Articulo
     </a>
     <br><br>
-	<div class="box-body" style="padding-right: 20px;">
+	<div class="box-body" style="padding-right: 20px; width: 1000px">
+		
 		<table id="example1" class="table table-bordered table-striped">
 			<thead>
 				<tr>
 					<th width="120px">Acciones</th>
-					<th>Codigo del Articulo</th>
-					<th>Descripción</th>
+					<th>Id Articulo</th>
+					<th>Id Categoria</th>
+					<th>Id Estado Articulo</th>
 					<th>Id Proveedor</th>
+					<th>Descripcion</th>
 					<th>Iva</th>
-					
+					<th>Precio</th>
+					<th>Nombre</th>
+					<th>cantidad</th>
+
 				</tr>
 			</thead>
 			<tbody>
-				@foreach($articulo as $datos)
+				@foreach($articulos as $datos)
 					<tr>
 						<td>
 							<div style="padding-left: 15px; display: inline-block;">
@@ -33,14 +40,20 @@
 								</a>
 							</div>
 						</td>
-						<td>{{ $datos->codigoArticulo }}</td>
-						<td>{{ $datos->descripcion }}</td>
+						<td>{{ $datos->idArticulo }}</td>
+						<td>{{ $datos->idCategoria }}</td>
+						<td>{{ $datos->idEstadoArticulos }}</td>
 						<td>{{ $datos->idProveedor }}</td>
+						<td>{{ $datos->descripcion }}</td>
 						<td>{{ $datos->iva }}</td>
-						
+						<td>{{ $datos->precio }}</td>
+						<td>{{ $datos->nombre }}</td>
+						<td>{{ $datos->cantidad }}</td>
+
 					</tr>
 				@endforeach
 			</tbody>
 		</table>
 	</div>
+
 @endsection

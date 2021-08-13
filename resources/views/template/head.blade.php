@@ -2,7 +2,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Home | E-Shopper</title>
+    <title>E-Buying | TPS 104</title>
     <link href="{{ asset('href/css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('href/css/font-awesome.min.css') }}" rel="stylesheet">
     <link href="{{ asset('href/css/prettyPhoto.css') }}" rel="stylesheet">
@@ -19,3 +19,8 @@
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ asset('href/images/ico/apple-touch-icon-114-precomposed.png') }}">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ asset('href/images/ico/apple-touch-icon-72-precomposed.png') }}">
     <link rel="apple-touch-icon-precomposed" href="{{ asset('href/images/ico/apple-touch-icon-57-precomposed.png') }}">
+    
+    <!-- Data Tables -->
+	<link rel="stylesheet" type="text/css" href="{{ asset('href/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ asset('href/plugins/datatables-responsive/css/responsive.bootstrap4.min.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ asset('href/plugins/datatables-buttons/css/buttons.bootstrap4.min.css') }}">

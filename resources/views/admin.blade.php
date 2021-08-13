@@ -5,27 +5,71 @@
 		<h2>ADMIN</h2>
 		<div class="panel-group category-products" id="accordian"><!--category-products-->
 
-			<div class="panel panel-default">
-				<div class="panel-heading">
-					<h2 class="panel-title">
-						<a href="{{ route('cliente.index') }}">
-							<i class="fa fa-user"></i>
-							Cliente
-						</a>
-					</h2>
+			@if (array_search("usuario.index", array_column(session()->get('permisos'),'permisosRuta')) > -1)
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h2 class="panel-title">
+							<a href="{{ route('usuario.index') }}">
+								<i class="fas fa-users"></i>
+								Usuarios
+							</a>
+						</h2>
+					</div>	
 				</div>
-			</div>
+			@endif
+			
 
+			@if (array_search("usuario.index", array_column(session()->get('permisos'),'permisosRuta')) > -1)
 			<div class="panel panel-default">
 				<div class="panel-heading">
 					<h2 class="panel-title">
-						<a href="{{ route('empleado.index') }}">
-							<i class="fas fa-user"></i>
-							Empleado
+						<a href="{{ route('roles.index') }}"> 
+							<i class="fas fa-user-tag"></i>
+							Roles
 						</a>
 					</h2>
-				</div>
+				</div>	
 			</div>
+			@endif
+
+			@if (array_search("usuario.index", array_column(session()->get('permisos'),'permisosRuta')) > -1)
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h2 class="panel-title">
+						<a href="{{ route('permisos.index') }}">
+							<i class="fas fa-person-booth"></i>
+							Permisos
+						</a>
+					</h2>
+				</div>	
+			</div>
+			@endif
+
+			@if (array_search("usuario.index", array_column(session()->get('permisos'),'permisosRuta')) > -1)
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h2 class="panel-title">
+						<a href="{{ route('usRol.index') }}"> 
+							<i class="fas fa-address-book"></i>
+							Usuarios-Roles
+						</a>
+					</h2>
+				</div>	
+			</div>
+			@endif
+			
+			@if (array_search("usuario.index", array_column(session()->get('permisos'),'permisosRuta')) > -1)
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h2 class="panel-title">
+						<a href="{{ route('rolespermisos.index') }}"> 
+							<i class="fas fa-address-book"></i>
+							Roles-Permisos
+						</a>
+					</h2>
+				</div>	
+			</div>
+			@endif
 
 			<div class="panel panel-default">
 				<div class="panel-heading">
@@ -38,7 +82,7 @@
 				</div>
 			</div>
 
-			<div class="panel panel-default">
+			{{-- <div class="panel panel-default">
 				<div class="panel-heading">
 					<h2 class="panel-title">
 						<a href="{{ route('venta.index') }}">
@@ -47,7 +91,7 @@
 						</a>
 					</h2>
 				</div>	
-			</div>
+			</div> --}}
 
 			<div class="panel panel-default">
 				<div class="panel-heading">
@@ -70,18 +114,7 @@
 					</h2>
 				</div>	
 			</div>
-			
-			<div class="panel panel-default">
-				<div class="panel-heading">
-					<h2 class="panel-title">
-						<a href="{{ route('barrio.index') }}">
-							<i class="fas fa-house-user"></i>
-							Barrio
-						</a>
-					</h2>
-				</div>	
-			</div>
-			
+			@if (array_search("usuario.index", array_column(session()->get('permisos'),'permisosRuta')) > -1)
 			<div class="panel panel-default">
 				<div class="panel-heading">
 					<h2 class="panel-title">
@@ -92,7 +125,18 @@
 					</h2>
 				</div>	
 			</div>
+			@endif
 			
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h2 class="panel-title">
+						<a href="{{ route('galeria.index') }}">
+							<i class="fas fa-grip-vertical"></i>
+							Galeria
+						</a>
+					</h2>
+				</div>	
+			</div>
 		</div><!--/category-products-->
 	</div>
 @endsection

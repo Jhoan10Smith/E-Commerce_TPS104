@@ -1,17 +1,10 @@
 <?php
 
-use App\Http\Controllers\FacturaController;
+use App\Http\Controllers\facturaController;
 
-Route::get('/facturas',[FacturaController::class,'index'])->name('factura.index');
+Route::get('/facturas',[facturaController::class,'index'])->name('factura.index')->middleware('myAuth');;
 
-Route::get('/factura/edit/{factura}',[FacturaController::class,'edit'])->name('factura.edit');
+Route::get('/factura/edit/{factura}',[facturaController::class,'edit'])->name('factura.edit')->middleware('myAuth');;
 
-Route::put('/factura/update/{factura}',[FacturaController::class,'update'])->name('factura.update');
-
-Route::get('/factura/delete/{factura}',[FacturaController::class,'delete'])->name('factura.delete');
-
-Route::get('/factura/new',[FacturaController::class,'new'])->name('factura.new');
-
-Route::post('/factura/save',[FacturaController::class,'save'])->name('factura.save');
 
 ?>

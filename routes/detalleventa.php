@@ -1,16 +1,15 @@
 <?php
-use App\Http\Controllers\DetalleventaController;
+use App\Http\Controllers\detalleventaController;
 
-Route::get('/detalleventa', [DetalleventaController::class,'index'])->name('venta.index');
+Route::get('/detalleventa/{venta}', [detalleventaController::class,'index'])->name('venta.index')->middleware('myAuth');; 
 
-Route::get('/detalleventa/delete/{venta}',[DetalleventaController::class,'delete'])->name('venta.delete');
+Route::get('/detalleventa/delete/{venta}',[detalleventaController::class,'delete'])->name('venta.delete');
 
-Route::get('/detalleventa/edit/{venta}',[DetalleventaController::class,'edit'])->name('venta.edit');
+Route::get('/detalleventa/edit/{venta}',[detalleventaController::class,'edit'])->name('venta.edit')->middleware('myAuth');;
 
-Route::put('/detalleventa/update/{venta}',[DetalleventaController::class,'update'])->name('venta.update');
+Route::put('/detalleventa/update/{venta}',[detalleventaController::class,'update'])->name('venta.update');
 
-Route::get('/detalleventa/new',[DetalleventaController::class,'new'])->name('venta.new');
+Route::get('/detalleventa/new',[detalleventaController::class,'new'])->name('venta.new')->middleware('myAuth');;
 
-Route::post('detalleventa/create',[DetalleventaController::class,'create'])->name('venta.create');
-
+Route::post('detalleventa/create',[detalleventaController::class,'create'])->name('venta.create');
 ?>

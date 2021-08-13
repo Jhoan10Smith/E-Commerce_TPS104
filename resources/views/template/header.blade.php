@@ -2,13 +2,15 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-6">
-					<div class="contactinfo">
+					{{-- <div class="contactinfo">
 						<ul class="nav nav-pills">
 							<li><a href="#"><i class="fa fa-phone"></i> +2 95 01 88 821</a></li>
 							<li><a href="#"><i class="fa fa-envelope"></i> info@domain.com</a></li>
+							<li class="dropdown"><a href="{{ route('document') }}" target="blank"><i class="far fa-file-word"></i> Document</a>
 						</ul>
-					</div>
+					</div> --}}
 				</div>
+				
 				<div class="col-sm-6">
 					<div class="social-icons pull-right">
 						<ul class="nav navbar-nav">
@@ -27,7 +29,7 @@
 			<div class="row">
 				<div class="col-md-4 clearfix">
 					<div class="logo pull-left">
-						<a href="index.html"><img src="{{ asset('href/images/home/logo.png') }}" alt="" /></a>
+						<a href="{{ route('home') }}"><img src="{{ asset('href/images/home/logo3-e-buying.png') }}" alt="" /></a>
 					</div>
 					{{-- <div class="btn-group pull-right clearfix">
 						<div class="btn-group">
@@ -56,9 +58,26 @@
 				<div class="col-md-8 clearfix">
 					<div class="shop-menu clearfix pull-right">
 						<ul class="nav navbar-nav">
-							<li><a href=""><i class="fa fa-user"></i> Account</a></li>
-							<li><a href="cart.html"><i class="fa fa-shopping-cart"></i> Cart</a></li>
-							<li><a href="login.html"><i class="fa fa-lock"></i> Login</a></li>
+							<li>
+								@if (session()->get('miusuario') )
+									<a href="{{ route('usuario.account')}} "><i class="fa fa-user"></i> {{ session()->get('miusuario')->nombre}}</a>
+								@else
+									<a href=""><i class="fa fa-user"></i> Account</a>
+								@endif
+							</li>
+
+							<li>
+								<a href="{{ route('cart.index') }}"><i class="fa fa-shopping-cart"></i> Cart</a>
+							</li>
+							
+							<li>
+								@if (session()->get('miusuario') )
+									<a href="{{ route('auth.logout') }}"><i class="fas fa-sign-out-alt"></i>Logout</a>
+								@else
+									<a href="{{ route('auth.index') }}"><i class="fa fa-lock"></i> Login</a>
+								@endif
+								
+							</li>
 						</ul>
 					</div>
 				</div>
@@ -83,21 +102,24 @@
 							<li><a href="{{ route('home') }}" class="active">Home</a></li>
 							<li class="dropdown"><a href="#">Shop<i class="fa fa-angle-down"></i></a>
 	                            <ul role="menu" class="sub-menu">
-	                                <li><a href="shop.html">Products</a></li>
-									<li><a href="product-details.html">Product Details</a></li> 
-									<li><a href="checkout.html">Checkout</a></li> 
-									<li><a href="cart.html">Cart</a></li> 
-									<li><a href="login.html">Login</a></li> 
+	                                <li><a href="{{ route('home') }}">Products</a></li>
+									<li><a href="{{ route('cart.index') }}">Cart</a></li> 
+									<li><a href="{{ route('auth.index') }}">Login</a></li> 
 	                            </ul>
-	                        </li> 
-							<li class="dropdown"><a href="{{ route('document') }}" target="blank"><i class="far fa-file-word"></i> Document</a>
+	                        </li>
+							@if (session('auth'))
+								@if (array_search("admin", array_column(session()->get('permisos'),'permisosRuta')) > -1)
+									<li class="dropdown"><a href="{{ route('admin') }}"><i class="fas fa-crown">&nbsp;Admin</a></i></li>
+								@endif
+							@endif
+							
 	                            {{-- <ul role="menu" class="sub-menu">
 	                                <li><a href="blog.html">Blog List</a></li>
 									<li><a href="blog-single.html">Blog Single</a></li>
 	                            </ul> --}}
-	                        </li> 
-							<li><a href="404.html">404</a></li>
-							<li><a href="contact-us.html">Contact</a></li>
+	                        
+							{{-- <li><a href="404.html">404</a></li>
+							<li><a href="contact-us.html">Contact</a></li> --}}
 						</ul>
 					</div>
 				</div>

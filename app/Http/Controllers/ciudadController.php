@@ -32,13 +32,10 @@ class ciudadController extends Controller
     	$ciudad->codigoCiudad =$editInfo->codigoCiudad;
     	$ciudad->nombre =$editInfo->nombre;
     	$ciudad->departamento =$editInfo->departamento;
+		  $ciudad->save();
+		  $ciudad=ciudad::all();
 
-    	
-
-		$barrio->save();
-		$ciudad=ciudad::all();
-
-		return redirect()->route('ciudad.index',compact('ciudad'));
+		  return redirect()->route('ciudad.index',compact('ciudad'));
     }
 
     public function new()
@@ -48,17 +45,15 @@ class ciudadController extends Controller
 
     public function create(request $create)
     {
-    	$ciudad=new barrio();
+    	$ciudad=new ciudad();
 
-        $ciudad->codigoCiudad =$create->codigoCiudad;
-        $ciudad->nombre =$create->nombre;
-        $ciudad->departamento =$create->departamento;
+      $ciudad->nombre =$create->nombre;
+      $ciudad->departamento =$create->departamento;
 
+      $ciudad->save();
+      $ciudad=ciudad::all();
 
-        $ciudad->save();
-        $ciudad=ciudad::all();
-
-		return redirect()->route('ciudad.index',compact('ciudad'));
+		  return redirect()->route('ciudad.index',compact('ciudad'));
     }
 
 }

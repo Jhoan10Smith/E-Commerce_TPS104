@@ -3,7 +3,7 @@
 @section('content')
 	<h1 style="margin-top: -40px;">Editar Ciudad</h1>
 	<div style="width: 70%;">
-		<form action="{{ route('ciudad.update',$barrio) }}" method="POST">
+		<form action="{{ route('ciudad.update',$ciudad) }}" method="POST">
 			@csrf
           	@method('PUT')
 

@@ -6,15 +6,16 @@
     	Crear Proveedor
     </a>
     <br><br>
-	<div class="box-body" style="width: 1200px; padding-right: 20px;">
-			<table id="example1" class="table table-bordered table-striped">
-				<thead>
-					<tr>
-						<th>Acciones</th>
-						<th>Id</th>
-						<th>Num.Identidad</th>
-						<th>Nombre</th>
+	<div class="box-body" style="padding-right: 20px;">
+		<table id="example1" class="table table-bordered table-striped">
+			<thead>
+				<tr>
+					<th width="120px">Acciones</th>
+						<th width="70px">Id Proveedor</th>
+						<th>Id Tipos</th>
 						<th>Codigo ciudad</th>
+						<th>Numero de Identidad</th>
+						<th>Nombre</th>
 						<th>Direccion</th>
 						<th>Telefono</th>
 						<th>Email</th>
@@ -35,10 +36,12 @@
 									</a>
 								</div>
 							</td>
+
 							<td>{{ $datos->idProveedor }}</td>
+							<td>{{ $datos->idTipos }}</td>
+							<td>{{ $datos->codigoCiudad }}</td>
 							<td>{{ $datos->numeroIdentidad }}</td>
 							<td>{{ $datos->nombre }}</td>
-							<td>{{ $datos->codigoCiudad }}</td>
 							<td>{{ $datos->direccion }}</td>
 							<td>{{ $datos->telefono }}</td>
 							<td>{{ $datos->email }}</td>

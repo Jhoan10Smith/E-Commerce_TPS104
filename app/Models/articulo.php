@@ -10,7 +10,7 @@ class articulo extends Model
     use HasFactory;
 
     protected $table="articulo";
-    protected $primaryKey="codigoArticulo";
+    protected $primaryKey="idArticulo";
     public $incrementing=true;
     public $timestamps=false;
 

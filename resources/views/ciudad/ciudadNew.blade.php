@@ -6,12 +6,6 @@
 		<form action="{{ route('ciudad.create') }}" method="POST">
 			@csrf
 
-			<label>Codigo Ciudad</label>
-			<input type="text"
-					name="documento"
-					class="form-control"
-					id="documento">
-			<br>
 			<label>Nombre</label>
 			<input type="text" 
 					name="nombre"

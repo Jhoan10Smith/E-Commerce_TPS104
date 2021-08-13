@@ -7,21 +7,23 @@
 			@csrf
           	@method('PUT')
 
-			<label>codigoDocumento</label>
+			<label>Id Factura</label>
 			<input type="text"
-					name="codigoDocumento"
-					value="{{ $factura->codigoDocumento }}"
+					name="idFactura"
+					value="{{ $factura->idFactura }}"
 					class="form-control"
-					id="codigoDocumento"
+					id="idFactura"
 					readonly="true">
 			<br>
-			<label>numeroDocumento</label>
-			<input type="text" 
-					name="numeroDocumento"
-					value="{{ $factura->numeroDocumento }}"
-					class="form-control"
-					id="numeroDocumento">
+			<label>Id Usuario</label>
+			<select class="form-control" name= "usuario">
+				@foreach ($usuario as $item)
+				<option value="{{ $item->idUsuario}}">{{$item->usuario}}</option>
+				@endforeach
+			</select>
+
 			<br>
+			
 			<label>Fecha</label>
 			<input type="date" 
 					name="fecha"
@@ -29,28 +31,26 @@
 					class="form-control"
 					id="fecha">
 			<br>
-			<label>Hora</label>
-			<input type="time"
-					min="0:00:00"
-					max="23:59:59" 
-					name="hora"
-					value="{{ $factura->hora }}"
-					class="form-control"
-					id="hora">
-			<br>
-			<label>codigoCliente</label>
+			<label>Observacion</label>
 			<input type="text" 
-					name="codigoCliente"
-					value="{{ $factura->codigoCliente }}"
+					name="observacion"
+					value="{{ $factura->observacion }}"
 					class="form-control"
-					id="codigoCliente">
+					id="observacion">
 			<br>
-			<label>idEmpleado</label>
+			<label>Total factura</label>
 			<input type="text" 
-					name="idEmpleado"
-					value="{{ $factura->idEmpleado }}"
+					name="totalFactura"
+					value="{{ $factura->totalFactura }}"
 					class="form-control"
-					id="idEmpleado">
+					id="totalFactura">
+			<br>
+			<label>Total Iva</label>
+			<input type="text" 
+					name="totalIva"
+					value="{{ $factura->totalIva }}"
+					class="form-control"
+					id="totalIva">
 			<br>
 			<button type="submit" class="btn btn-primary">Guardar</button>
 			<br><br>

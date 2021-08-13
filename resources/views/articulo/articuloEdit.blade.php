@@ -1,21 +1,59 @@
 @extends('admin')
 
 @section('content')
-<<<<<<< HEAD
 	<h1 style="margin-top: -40px;">Editar Articulo</h1>
 	<div style="width: 70%;">
 		<form action="{{ route('articulo.update',$articulo) }}" method="POST">
 			@csrf
           	@method('PUT')
 
-			<label>Codigo del Articulo</label>
+			<label>id Articulo</label>
 			<input type="text" 
-					name="codigoArticulo" 
-					value="{{ $articulo->codigoArticulo }}"
+					name="idArticulo" 
+					value="{{ $articulo->idArticulo }}"
 					class="form-control"
-					id="codigoArticulo"
+					id="idArticulo"
 					readonly="true">
 			<br>
+
+			<label>id Categoria</label>
+				<select class="form-control" name= "idCategoria">
+				@foreach ($categoria as $item)
+				<?php if($item->idCategoria ==  $articulo->idCategoria ){ ?>
+						<option value="{{ $item->idCategoria}}" selected>{{$item->nombre}}</option>
+					<?php }else { ?>
+						<option value="{{ $item->idCategoria}}">{{$item->nombre}}</option>
+					<?php } ?>	
+				@endforeach
+			</select>
+			<br>
+
+			<label>id Estado Articulo</label>
+			<select class="form-control" name= "idEstadoArticulos">
+				@foreach ($estadoarticulos as $item)
+				<?php if($item->idEstadoArticulos ==  $articulo->idEstadoArticulos){ ?>
+						<option value="{{ $item->idEstadoArticulos}}" selected>{{$item->descripcion}}</option>
+					<?php }else { ?>
+						<option value="{{ $item->idEstadoArticulos}}">{{$item->descripcion}}</option>
+					<?php } ?>	
+				@endforeach
+			</select>
+			<br>
+
+
+			<label>Id Proveedor</label>
+				<select class="form-control" name= "idProveedor">
+				@foreach ($proveedor as $item)
+				<?php if($item->idProveedor ==  $articulo->idProveedor){ ?>
+						<option value="{{ $item->idProveedor}}" selected>{{$item->nombre}}</option>
+					<?php }else { ?>
+						<option value="{{ $item->idProveedor}}">{{$item->nombre}}</option>
+					<?php } ?>	
+				
+				@endforeach
+			</select>
+			<br>
+
 			<label>Descripción</label>
 			<input type="text"
 					name="descripcion"
@@ -23,13 +61,7 @@
 					class="form-control"
 					id="descripcion">
 			<br>
-			<label>Id Proveedor</label>
-			<input type="text" 
-					name="idProveedor"
-					value="{{ $articulo->idProveedor }}"
-					class="form-control"
-					id="idProveedor">
-			<br>
+			
 			<label>Iva</label>
 			<input type="text" 
 					name="iva"
@@ -37,52 +69,35 @@
 					class="form-control"
 					id="iva">
 			
-=======
-<?php
-	echo $articulo;
-?>
-	<h1 style="margin-top: 0px;">Editar Articulo</h1>
-	<div style="width: 50%;">
-		<form action="{{ route('articulo.update',$articulo) }}" method="POST">
-			@csrf
-			@method('PUT')
-
-			<label>codigoArticulo</label>
+			<br>
+			
+			<label>Precio</label>
 			<input type="text" 
-					name="codigo" 
-					value="{{ $articulo->codigoArticulo }}"
+					name="precio"
+					value="{{ $articulo->precio }}"
 					class="form-control"
-					id="codigo"
-					readonly="true">
+					id="precio">
 			<br>
-			<label>descripcion</label>
-			<input type="text"
-					name="documento"
-					value="{{ $articulo->descripcion }}"
-					class="form-control"
-					id="documento">
-			<br>
-			<label>idProveedor</label>
+			<label>Nombre</label>
 			<input type="text" 
 					name="nombre"
-					value="{{ $articulo->idProveedor }}"
+					value="{{ $articulo->nombre }}"
 					class="form-control"
 					id="nombre">
 			<br>
-			<label>iva</label>
+			<!--label>Imagen</label>
 			<input type="text" 
-					name="apellido"
-					value="{{ $articulo->iva }}"
+					name="imagen"
+					value="{{ $articulo->imagen }}"
 					class="form-control"
-					id="apellido">
-			<br>
-			<label>numeroDocumento</label>
+					id="imagen">
+			<br-->
+			<label>Cantidad</label>
 			<input type="text" 
-					name="genero"
-					value="{{ $articulo->numeroDocumento }}"
+					name="cantidad"
+					value="{{ $articulo->cantidad }}"
 					class="form-control"
-					id="genero">
->>>>>>> 5fbc6325a081f587c5e31a062327478ebb5ec416
+					id="cantidad">
 			<br>
 			<button type="submit" class="btn btn-primary">Guardar</button>
 			<br><br>

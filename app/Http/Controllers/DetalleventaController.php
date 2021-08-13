@@ -5,63 +5,30 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Models\detalleventa;
+use App\Models\factura; 
+use App\Models\articulo; 
 
-class DetalleventaController extends Controller
+class detalleventaController extends Controller
 {
-    public function index()
+    public function index($id)
     {
-    	$venta = detalleventa::all();
-    	return view('detalleventa.ventaListado',compact('venta'));
+
+
+		//$venta = detalleventa::select('detalleventa.nameUser', 'categories.nameCategory')
+                
+
+        $venta = detalleventa::select()
+                ->join('articulo', 'detalleventa.idArticulo', '=', 'articulo.idArticulo')
+                ->where("detalleventa.idFactura",$id)
+                ->get();        
+
+
+    	//$venta = detalleventa::where("idFactura",$id)->get();
+    	$valoresFactura = factura::where("idFactura",$id)->get();
+    	
+    	return view('detalleventa.ventaListado',compact('venta','valoresFactura'));
     }
 
-    public function delete(detalleventa $venta)
-    {
-    	$venta->delete();
-    	$venta=detalleventa::all();
-    	return redirect()->route('venta.index',compact('venta'));
-    }
-
-    public function edit(detalleventa $venta)
-    {
-    	return view('detalleventa.ventaEdit',compact('venta'));
-    }
-
-    public function update(request $modify, detalleventa $venta)
-    {
-    	$venta->cantidad = $modify->cantidad;
-    	$venta->iva = $modify->iva;
-    	$venta->sinIva = $modify->sinIva;
-    	$venta->porDescuento = $modify->porDescuento;
-    	$venta->totalDescuento = $modify->totalDescuento;
-    	$venta->total = $modify->total;
-
-    	$venta->save();
-    	$venta=detalleventa::all();
-
-    	return redirect()->route('venta.index',compact('venta'));
-    }
-
-    public function new()
-    {
-    	return view('detalleventa.ventaNew');
-    }
-
-    public function create(request $newSale)
-    {
-    	$venta=new detalleventa();
-
-    	$venta->cantidad = $newSale->cantidad;
-    	$venta->iva = $newSale->iva;
-    	$venta->sinIva = $newSale->sinIva;
-    	$venta->porDescuento = $newSale->porDescuento;
-		$venta->totalDescuento = $newSale->totalDescuento;
-		$venta->total = $newSale->total;
-
-		$venta->save();
-		$venta=detalleventa::all();
-
-    	return redirect()->route('venta.index',compact('venta'));
-    }
-
+   
 
 }
